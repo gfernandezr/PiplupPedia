@@ -14,7 +14,27 @@
     />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokedex</title>
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+    <title>PiplupPedia</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,8 +42,8 @@
       href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/PiplupPedia/assets/index-4bbcfb4b.js"></script>
-    <link rel="stylesheet" href="/PiplupPedia/assets/index-9827bc2d.css">
+    <script type="module" crossorigin src="/PiplupPedia/assets/index-80b02238.js"></script>
+    <link rel="stylesheet" href="/PiplupPedia/assets/index-959b2c8c.css">
   </head>
   <body>
     <div id="root"></div>
