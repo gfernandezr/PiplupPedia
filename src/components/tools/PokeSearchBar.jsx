@@ -11,7 +11,7 @@ export default function PokeSearchBar() {
 
   const onSubmit = (data) => {
     if (data.search) {
-      navigate(`/pokemon-search/1?search=${data.search}`);
+      navigate(`PiplupPedia/pokemon-search/1?search=${data.search}`);
     }
   };
 

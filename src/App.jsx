@@ -16,9 +16,9 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/pokemon-list/:index" element={<PokeList />} />
-        <Route path="/pokemon-search/:index" element={<PokeSearch />} />
+        <Route path="PiplupPedia/home" element={<Home />} />
+        <Route path="PiplupPedia/pokemon-list/:index" element={<PokeList />} />
+        <Route path="PiplupPedia/pokemon-search/:index" element={<PokeSearch />} />
       </Routes>
     </main>
   );
