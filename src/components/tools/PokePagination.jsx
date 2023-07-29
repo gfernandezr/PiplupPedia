@@ -20,7 +20,7 @@ function PokePagination({ pokemon, page, path, query }) {
         renderItem={(item) => (
           <PaginationItem
             component={NavLink}
-            to={ query ? `PiplupPedia/${path}/${item.page}?search=${query}` : `/${path}/${item.page}`}
+            to={ query ? `/${path}/${item.page}?search=${query}` : `/${path}/${item.page}`}
             slots={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
             {...item}
             style={
