@@ -1,13 +1,13 @@
 import { useSearchParams } from "react-router-dom";
 
 import { useContext } from "react";
-import { PokeContext } from "../context/PokeContext";
+import { PokeContext } from "../context/PokeContext.jsx";
 
 import { useParams } from "react-router";
 
-import PokeGrid from "./PokeGrid";
+import PokeGrid from "./PokeGrid.jsx";
 
-import { chunkArray } from "../functions/ChunkArray";
+import { chunkArray } from "../functions/ChunkArray.jsx";
 
 function PokeSearch() {
   const [searchParams, setSearchParams] = useSearchParams();

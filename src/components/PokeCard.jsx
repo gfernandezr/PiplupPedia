@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import PokeType from "./PokeType";
-import PokeGen from "./PokeGen";
-import PokeGif from "./PokeGif";
+import PokeType from "./PokeType.jsx";
+import PokeGen from "./PokeGen.jsx";
+import PokeGif from "./PokeGif.jsx";
 
 function PokeCard({ pokemon_url }) {
   const [poke, setPoke] = useState(null);

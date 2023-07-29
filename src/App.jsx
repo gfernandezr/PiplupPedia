@@ -1,10 +1,10 @@
 import { Route, Routes, Navigate } from "react-router";
 
-import Header from "./components/Home/Header";
-import Home from "./components/Home/Home";
+import Header from "./components/Home/Header.jsx";
+import Home from "./components/Home/Home.jsx";
 
-import PokeList from "./components/PokeList";
-import PokeSearch from "./components/PokeSearch";
+import PokeList from "./components/PokeList.jsx";
+import PokeSearch from "./components/PokeSearch.jsx";
 
 function App() {
   if (window.location.pathname === "/") {

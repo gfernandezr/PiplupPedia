@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { PokeContext } from "../context/PokeContext";
+import { PokeContext } from "../context/PokeContext.jsx";
 
 import { useParams } from "react-router";
 
-import PokeGrid from "./PokeGrid";
+import PokeGrid from "./PokeGrid.jsx";
 
-import { chunkArray } from "../functions/ChunkArray";
+import { chunkArray } from "../functions/ChunkArray.jsx";
 
 function PokeList() {
   const { pokemon } = useContext(PokeContext);

@@ -1,6 +1,5 @@
-import PokeCard from "./PokeCard";
-import PokePagination from "./tools/PokePagination";
-import HomeButton from "./tools/HomeButton";
+import PokeCard from "./PokeCard.jsx";
+import PokePagination from "./tools/PokePagination.jsx";
 
 function PokeGrid({ pokemon_split, index, path, query }) {
   return (
