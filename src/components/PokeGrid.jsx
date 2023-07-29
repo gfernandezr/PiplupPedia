@@ -4,15 +4,14 @@ import PokePagination from "./tools/PokePagination.jsx";
 function PokeGrid({ pokemon_split, index, path, query }) {
   return (
     <>
-      <div className="flex flex-row items-center w-fit mx-auto">
+      <div className="flex items-center w-fit mx-auto">
         {query ? (
           <h1 className="text-orange-500 text-3xl font-bold mr-2">
-            Busqueda: {query} -
+            Busqueda: {query}
           </h1>
         ) : (
           ""
         )}
-        <h1 className="text-orange-500 text-3xl font-bold">Pagina: {index}</h1>
       </div>
 
       <div className="inline-block my-5">
@@ -39,15 +38,14 @@ function PokeGrid({ pokemon_split, index, path, query }) {
         />
       </div>
 
-      <div className="flex flex-row items-center w-fit mx-auto">
+      <div className="flex items-center w-fit mx-auto">
         {query ? (
           <h1 className="text-orange-500 text-3xl font-bold mr-2">
-            Busqueda: {query} -
+            Busqueda: {query}
           </h1>
         ) : (
           ""
         )}
-        <h1 className="text-orange-500 text-3xl font-bold">Pagina: {index}</h1>
       </div>
     </>
   );

@@ -8,13 +8,18 @@ import { theme } from "../styles/theme";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
+import { useMediaQuery } from "react-responsive";
+
 function PokePagination({ pokemon, page, path, query }) {
+
+  const isSmallScreen = useMediaQuery({ maxWidth: 640 });
+  const isLargeScreen = useMediaQuery({ minWidth: 1024 });
 
   return (
     <ThemeProvider theme={theme}>
       <Pagination
         count={pokemon.length}
-        size="large"
+        size={isSmallScreen ? "small" : isLargeScreen ? "large" : "medium"}
         page={page}
         color="primary"
         renderItem={(item) => (
