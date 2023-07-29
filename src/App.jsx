@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 import Header from "./components/Home/Header.jsx";
 import Home from "./components/Home/Home.jsx";
+import PokeNotFound from "./components/PokeNotFound.jsx";
 
 import PokeList from "./components/PokeList.jsx";
 import PokeSearch from "./components/PokeSearch.jsx";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/pokemon-list/:index" element={<PokeList />} />
         <Route path="/pokemon-search/:index" element={<PokeSearch />} />
+        <Route path="*" element={<PokeNotFound />} />
       </Routes>
     </main>
   );
