@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
-import { PokeContext } from "../../context/PokeContext";
+import { PokeContext } from "../../context/PokeContext.jsx";
 
-import PokeCard from "../PokeCard";
-import PokeButton from "../tools/PokeButton";
+import PokeCard from "../PokeCard.jsx";
+import PokeButton from "../tools/PokeButton.jsx";
 
 function Home() {
   const { pokemon } = useContext(PokeContext);

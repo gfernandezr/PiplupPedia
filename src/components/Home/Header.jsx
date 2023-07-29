@@ -1,4 +1,4 @@
-import PokeInput from '../tools/PokeSearchBar'
+import PokeInput from '../tools/PokeSearchBar.jsx'
 
 function Header() {
   return (
