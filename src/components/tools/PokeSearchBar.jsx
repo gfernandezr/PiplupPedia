@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 import lupa from "../../assets/search.svg";
-import HomeButton from "./HomeButton";
+import HomeButton from "./HomeButton.jsx";
 
 export default function PokeSearchBar() {
   const { register, handleSubmit } = useForm();
