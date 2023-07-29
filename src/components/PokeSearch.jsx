@@ -7,7 +7,7 @@ import { useParams } from "react-router";
 
 import PokeGrid from "./PokeGrid.jsx";
 
-import { chunkArray } from "../functions/ChunkArray.jsx";
+import { chunkArray } from "../functions/chunkArray.jsx";
 
 function PokeSearch() {
   const [searchParams, setSearchParams] = useSearchParams();
