@@ -1,12 +1,12 @@
 import { Route, Routes, useNavigate } from "react-router";
 import { useEffect } from "react";
 
-import Header from "./components/Home/Header.jsx";
-import Home from "./components/Home/Home.jsx";
-import PokeNotFound from "./components/PokeNotFound.jsx";
+import Header from "./components/page/Header.jsx";
+import Home from "./components/page/Home.jsx";
+import PokeNotFound from "./components/page/PokeNotFound.jsx";
 
-import PokeList from "./components/PokeList.jsx";
-import PokeSearch from "./components/PokeSearch.jsx";
+import PokeList from "./components/index/PokeList.jsx";
+import PokeSearch from "./components/index/PokeSearch.jsx";
 
 function App() {
 

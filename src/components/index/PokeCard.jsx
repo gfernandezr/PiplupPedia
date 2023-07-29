@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import PokeType from "./PokeType.jsx";
-import PokeGen from "./PokeGen.jsx";
+import PokeType from "../pokemon/PokeType.jsx";
+import PokeGen from "../pokemon/PokeGen.jsx";
 import PokeGif from "./PokeGif.jsx";
 
 function PokeCard({ pokemon_url }) {

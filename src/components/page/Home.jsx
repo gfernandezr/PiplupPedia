@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import { PokeContext } from "../../context/PokeContext.jsx";
 
-import PokeCard from "../PokeCard.jsx";
+import PokeCard from "../index/PokeCard.jsx";
 import PokeButton from "../tools/PokeButton.jsx";
 
 function Home() {
@@ -33,7 +33,7 @@ function Home() {
       </div>
       <NavLink to="/pokemon-list/1">
         {" "}
-        <PokeButton text="Ver lista de pokemon" />{" "}
+        <PokeButton text="Ver lista de pokémon" />{" "}
       </NavLink>
     </>
   );

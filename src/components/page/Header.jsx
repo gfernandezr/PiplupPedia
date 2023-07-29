@@ -1,4 +1,4 @@
-import PokeInput from '../tools/PokeSearchBar.jsx'
+import PokeSearchBar from '../tools/PokeSearchBar.jsx'
 
 function Header() {
   return (
@@ -47,7 +47,7 @@ function Header() {
       </div>
 
       <hr class="h-[2px] my-4 bg-orange-500 border-0" />
-      <PokeInput />
+      <PokeSearchBar />
       <hr class="h-[2px] my-4 bg-orange-500 border-0" />
     </>
   );
