@@ -1,8 +1,3 @@
-# React + Vite
+# PiplupPedia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+PiplupPedia es un proyecto de una plataforma enciclopedica en español donde encontrarás una extensa base de datos que abarca desde los clásicos Pokémon de primera generación hasta las criaturas de quinta generación. Los datos e imagenes de esta plataforma son recolectados de [PokéAPI](https://pokeapi.co/) y [WikiDex](https://www.wikidex.net).
