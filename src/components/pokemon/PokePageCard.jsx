@@ -227,7 +227,7 @@ function PokePageCard() {
           >
             <p className="inline-block font-bold my-auto"> Género: </p>
             {pokespecies.gender_rate === -1 ? (
-              "Sin Género"
+              <p className="my-auto">Sin Género </p>
             ) : (
               <div className="my-auto">
                 <span>
