@@ -7,6 +7,7 @@ import PokeCard from "../index/PokeCard.jsx";
 import PokeButton from "../tools/PokeButton.jsx";
 
 function Home() {
+  document.title = "PiplupPedia - La Pokédex en español";
   const { pokemon } = useContext(PokeContext);
 
   function getRandomNumber(min, max) {

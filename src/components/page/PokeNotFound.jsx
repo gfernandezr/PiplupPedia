@@ -1,6 +1,7 @@
 import dizzyPiplup from "../../assets/pokemon-piplup-not-found.gif";
 
 export default function PokeNotFound() {
+    document.title = "Oops! - PiplupPedia";
   return (
     <div>
         <b className="text-orange-500 text-5xl sm:text-6xl">¡Oops!</b>

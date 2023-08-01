@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
 import { PokeContext } from "../../context/PokeContext.jsx";
 
 import { useParams } from "react-router";
@@ -16,6 +16,10 @@ function PokeSearch() {
   const query = searchParams.get("search");
   const { pokemon } = useContext(PokeContext);
   const { index } = useParams();
+
+  useEffect(() => {
+    document.title = "Pagina " + index + " de " + pokemon_split.length + " - PiplupPedia"
+  }, [query]);
 
   const filteredPokemon = pokemon.filter((poke) =>
     poke.name.includes(searchParams.get("search"))

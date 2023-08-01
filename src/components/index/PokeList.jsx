@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
 import { PokeContext } from "../../context/PokeContext.jsx";
 
 import { useParams } from "react-router";
@@ -12,6 +12,10 @@ function PokeList() {
   const { index } = useParams();
 
   const pokemon_split = chunkArray(pokemon, 12);
+
+  useEffect(() => {
+    document.title = "Pagina " + index + " de " + pokemon_split.length + " - PiplupPedia"
+  }, [index]);
 
   if (!pokemon_split) {
     return;

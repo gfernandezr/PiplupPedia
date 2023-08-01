@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 
 import { NavLink } from "react-router-dom";
 
-import PokeType from "../pokemon/PokeType.jsx";
-import PokeGen from "../pokemon/PokeGen.jsx";
+import PokeType from "../pokemon/utils/PokeType.jsx";
+import PokeGen from "../pokemon/utils/PokeGen.jsx";
 import PokeGif from "./PokeGif.jsx";
 
 function PokeCard({ pokemon_url }) {
