@@ -10,7 +10,7 @@ import PokeNotFound from "../page/PokeNotFound.jsx";
 import PokeType from "./PokeType.jsx";
 import PokeGen from "./PokeGen.jsx";
 import PokeColor from "./PokeColor.jsx";
-import PokeFigure from "./Pokefigure.jsx";
+import PokeFigure from "./PokeFigure.jsx";
 
 import male_icon from "../../assets/male-icon.svg";
 import female_icon from "../../assets/female-icon.svg";
@@ -266,6 +266,14 @@ function PokePageCard() {
                 ))}
               </span>
             </div>
+          </span>
+
+          <span
+            className="border-b-[1px] p-[1px] border-gray-600 h-fit
+            sm:h-[60px]
+            md:h-[70px]"
+          >
+            <PokeColor color={pokespecies.color.name} />
           </span>
 
           <span
