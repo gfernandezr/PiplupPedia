@@ -35,12 +35,12 @@ function PokeType({ types }) {
 
   return (
     <div className="inline-block text-gray-400">
-      <p className="inline-block font-bold"> Tipo: </p>
+      <p className="inline-block font-bold align-middle"> Tipo: </p>
       {types.map((type_index) => (
         <img
           key={type_index.slot}
           src={type_icons[type_index.type.name]}
-          className="inline-block ml-1"
+          className="inline-block ml-1 align-middle"
         />
       ))}
     </div>

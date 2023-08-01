@@ -1,4 +1,5 @@
 import PokeSearchBar from '../tools/PokeSearchBar.jsx'
+import pokedex from '../../assets/Pokédex_logo.png'
 
 function Header() {
   return (
@@ -22,7 +23,7 @@ function Header() {
           <p className="text-gray-400 inline">La </p>
           <img
             className="inline w-16"
-            src="https://archives.bulbagarden.net/media/upload/thumb/4/4b/Pok%C3%A9dex_logo.png/250px-Pok%C3%A9dex_logo.png"
+            src={pokedex}
           />
           <p className="text-gray-400 inline"> en español</p>
         </div>
@@ -46,9 +47,9 @@ function Header() {
         </p>
       </div>
 
-      <hr class="h-[2px] my-4 bg-orange-500 border-0" />
+      <hr className="h-[2px] my-4 bg-orange-500 border-0" />
       <PokeSearchBar />
-      <hr class="h-[2px] my-4 bg-orange-500 border-0" />
+      <hr className="h-[2px] my-4 bg-orange-500 border-0" />
     </>
   );
 }

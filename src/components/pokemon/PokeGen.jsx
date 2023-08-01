@@ -38,7 +38,7 @@ function PokeGen({ gen }) {
   return (
     <div className="inline-block text-gray-400">
       <p className="inline-block font-bold"> Generación: </p> {gen_str}{" "}
-      <img src={gen_logo} className="inline-block" />
+      <img src={gen_logo} className="inline-block align-middle mb-[2px]" />
     </div>
   );
 }

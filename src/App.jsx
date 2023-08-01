@@ -7,6 +7,7 @@ import PokeNotFound from "./components/page/PokeNotFound.jsx";
 
 import PokeList from "./components/index/PokeList.jsx";
 import PokeSearch from "./components/index/PokeSearch.jsx";
+import PokePageCard from "./components/pokemon/PokePageCard.jsx";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/pokemon-list/:index" element={<PokeList />} />
         <Route path="/pokemon-search/:index" element={<PokeSearch />} />
+        <Route path="/pokemon/:pokemon_name" element={<PokePageCard />} />
         <Route path="*" element={<PokeNotFound />} />
       </Routes>
     </main>
