@@ -1,13 +1,18 @@
-import { useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useParams } from "react-router";
+import { capitalize } from "@mui/material";
+
 import { PokeContext } from "../../context/PokeContext.jsx";
 
-import { capitalize } from "@mui/material";
 import { importPoke } from "../../functions/importPoke.jsx";
+import getEvolutionLine from "../../functions/getEvolutionLine.jsx";
+import getEvolutionLineImg from "../../functions/getEvolutionLineImg.jsx";
 
 import PokeNotFound from "../page/PokeNotFound.jsx";
 import PokePageCard from "./PokePageCard";
 import PokeDesc from "./PokeDesc.jsx";
+import PokeEvolutionLine from "./PokeEvolutionLine.jsx";
+import PokeEvolutionDesc from "./PokeEvolutionDesc.jsx";
 
 function PokePage() {
   const { pokemon } = useContext(PokeContext);
@@ -29,9 +34,31 @@ function PokePage() {
 
   const [poke, pokespecies] = importPoke(pokemon_array[0].url);
 
-  useEffect(() => { poke ?
-    document.title = capitalize(poke.name) + " - PiplupPedia" : "PiplupPedia"
+  useEffect(() => {
+    poke
+      ? (document.title = capitalize(poke.name) + " - PiplupPedia")
+      : "PiplupPedia";
   }, [poke]);
+
+  const [evolutionList, setEvolutionList] = useState();
+
+  useEffect(() => {
+    if (pokespecies) {
+      getEvolutionLine(pokespecies.evolution_chain.url).then((e) => {
+        setEvolutionList(e[0]);
+      });
+    }
+  }, [pokespecies]);
+
+  const [evolutionImgList, setEvolutionImgList] = useState();
+
+  useEffect(() => {
+    if (pokespecies) {
+      getEvolutionLineImg(pokespecies.evolution_chain.url).then((e) => {
+        setEvolutionImgList(e[0]);
+      });
+    }
+  }, [pokespecies]);
 
   if (pokemon_array.length === 0) {
     return <PokeNotFound />;
@@ -41,16 +68,41 @@ function PokePage() {
   }
 
   return (
-    <div className="md:flex flex-row-reverse">
-
+    <div className="md:flex md:flex-row-reverse md:gap-10">
       <PokePageCard poke={poke} pokespecies={pokespecies} />
 
-      <div className="w-full mr-10">
+      <div className=" md:min-w-[110px] w-full">
+        <div>
+          <p className="hidden md:flex text-orange-500 text-4xl font-black capitalize my-2">
+            {poke.name}
+          </p>
 
-        <div className="bg-gray-800 text-gray-400 rounded-lg p-3 border-[2px] border-orange-500 text-justify mt-3 w-full">
-          <PokeDesc poke={poke} pokespecies={pokespecies} />
+          <hr className="hidden md:flex h-[1px] bg-orange-500 border-0" />
+
+          <div className="bg-gray-800 text-gray-400 rounded-lg p-3 border-[2px] border-orange-500 text-justify mt-3 w-full">
+            <PokeDesc poke={poke} pokespecies={pokespecies} />
+          </div>
         </div>
 
+        <div>
+          <p className="text-left md:flex text-orange-500 text-3xl md:text-4xl font-black capitalize my-2 ">
+            Evolución
+          </p>
+
+          <hr className="h-[1px] bg-orange-500 border-0" />
+
+          <div className="bg-gray-800 text-gray-400 rounded-lg p-4 border-[2px] border-orange-500 text-justify mt-3 w-full overflow-x-auto">
+            <div>
+              <PokeEvolutionDesc evolutionList={evolutionList} />
+            </div>
+            <div className="min-w-fit mt-4 bg-gray-500 rounded-lg p-3 border-[2.5px] border-black flex justify-center ">
+              <PokeEvolutionLine
+                evolutionList={evolutionList}
+                evolutionImgList={evolutionImgList}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

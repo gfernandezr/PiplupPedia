@@ -27,6 +27,7 @@ function App() {
         <Route path="/pokemon-list/:index" element={<PokeList />} />
         <Route path="/pokemon-search/:index" element={<PokeSearch />} />
         <Route path="/pokemon/:pokemon_name" element={<PokePage />} />
+        <Route path="/pokemon/sylveon" element={<PokeNotFound />} />
         <Route path="*" element={<PokeNotFound />} />
       </Routes>
     </main>
