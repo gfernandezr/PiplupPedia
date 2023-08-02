@@ -13,6 +13,7 @@ import PokePageCard from "./PokePageCard";
 import PokeDesc from "./PokeDesc.jsx";
 import PokeEvolutionLine from "./PokeEvolutionLine.jsx";
 import PokeEvolutionDesc from "./PokeEvolutionDesc.jsx";
+import PokeGameData from "./PokeGameData.jsx";
 
 function PokePage() {
   const { pokemon } = useContext(PokeContext);
@@ -105,6 +106,18 @@ function PokePage() {
               </div>
               <p className="text-gray-800 min-w-fit invisible">---</p>
             </div>
+          </div>
+        </div>
+
+        <div>
+          <p className="text-left md:flex text-orange-500 text-3xl md:text-4xl font-black capitalize my-2 ">
+            Datos
+          </p>
+
+          <hr className="h-[1px] bg-orange-500 border-0" />
+
+          <div className="bg-gray-800 text-gray-400 rounded-lg p-2 pb-3 border-[2px] border-orange-500 text-justify mt-3 w-full overflow-x-auto ">
+            <PokeGameData poke={poke} pokespecies={pokespecies}/>
           </div>
         </div>
       </div>
