@@ -18,7 +18,7 @@ function PokeGrowthRate({ growth_rate, level }) {
         return (4 * level ** 3) / 5;
       },
     },
-    "medium slow": {
+    "medium-slow": {
       name_es: "Parabólico",
       exp_function: function expInLevel(level) {
         return (6 * level ** 3) / 5 - 15 * level ** 2 + 100 * level - 140;
@@ -64,10 +64,14 @@ function PokeGrowthRate({ growth_rate, level }) {
 
   const expFunction = growth_rate_types[growth_rate].exp_function;
 
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat('es').format(number);
+  };
+
   return (
     <div>
       <p className="ml-1">
-        { isNaN(level) ? "" : expFunction(level)} ({growth_rate_types[growth_rate].name_es})
+        { isNaN(level) ? "" : formatNumber(expFunction(level))} ({growth_rate_types[growth_rate].name_es})
       </p>
     </div>
   );

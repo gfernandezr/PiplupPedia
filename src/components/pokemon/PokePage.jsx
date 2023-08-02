@@ -111,7 +111,7 @@ function PokePage() {
 
         <div>
           <p className="text-left md:flex text-orange-500 text-3xl md:text-4xl font-black capitalize my-2 ">
-            Datos
+            Otros Datos
           </p>
 
           <hr className="h-[1px] bg-orange-500 border-0" />

@@ -22,25 +22,41 @@ function PokeGameData({ poke, pokespecies }) {
     }
   };
   return (
-    <div className="flex flex-col sm:flex-row">
-      <div className="flex flex-row">
-        <p className="min-w-fit">Puntos de exp. en nivel</p>
-        <input
-          className="w-10 h-fit bg-gray-400 text-gray-800 rounded-xl text-center mx-1 border-[1.5px] border-black outline-none font-bold"
-          type="number"
-          inputMode="numeric"
-          value={level}
-          onChange={handleLevelChange}
-          onBlur={handleLevelBLur}
-        />
-        <p>:</p>
+    <div className="flex flex-col">
+      <div className="flex flex-col sm:flex-row">
+        <div className="flex flex-row">
+          <b className="min-w-fit">Puntos de exp. en nivel</b>
+          <input
+            className="w-10 h-fit bg-gray-400 text-gray-800 rounded-xl text-center mx-1 border-[1.5px] border-black outline-none font-bold"
+            type="number"
+            inputMode="numeric"
+            value={level}
+            onChange={handleLevelChange}
+            onBlur={handleLevelBLur}
+          />
+          <b>:</b>
+        </div>
+        <div>
+          <PokeGrowthRate
+            growth_rate={pokespecies.growth_rate.name}
+            level={level}
+          />
+        </div>
       </div>
-      <div>
-        <PokeGrowthRate
-          growth_rate={pokespecies.growth_rate.name}
-          level={level}
-        />
-      </div>
+
+      <p>
+        <b>Ratio de captura : </b>
+        {pokespecies.capture_rate}
+      </p>
+      <p>
+        <b>Amistad base : </b>
+        {pokespecies.base_happiness}
+      </p>
+      <p>
+        <b>Pasos para la eclosión: </b>
+        {pokespecies.hatch_counter} ciclos
+        (<span>{pokespecies.hatch_counter * 255} - {pokespecies.hatch_counter * 257}</span>) 
+      </p>
     </div>
   );
 }
