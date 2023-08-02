@@ -95,7 +95,7 @@ function PokePage() {
             <div>
               <PokeEvolutionDesc evolutionList={evolutionList} />
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row w-fit mx-auto">
               <p className="text-gray-800 min-w-fit invisible">---</p>
               <div className="min-w-fit mt-4 bg-gray-500 rounded-lg p-3 border-[2.5px] border-black flex justify-center">
                 <PokeEvolutionLine
