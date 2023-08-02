@@ -91,15 +91,19 @@ function PokePage() {
 
           <hr className="h-[1px] bg-orange-500 border-0" />
 
-          <div className="bg-gray-800 text-gray-400 rounded-lg p-4 border-[2px] border-orange-500 text-justify mt-3 w-full overflow-x-auto">
+          <div className="bg-gray-800 text-gray-400 rounded-lg p-2 pb-3 border-[2px] border-orange-500 text-justify mt-3 w-full overflow-x-auto ">
             <div>
               <PokeEvolutionDesc evolutionList={evolutionList} />
             </div>
-            <div className="min-w-fit mt-4 bg-gray-500 rounded-lg p-3 border-[2.5px] border-black flex justify-center ">
-              <PokeEvolutionLine
-                evolutionList={evolutionList}
-                evolutionImgList={evolutionImgList}
-              />
+            <div className="flex flex-row">
+              <p className="text-gray-800 min-w-fit invisible">---</p>
+              <div className="min-w-fit mt-4 bg-gray-500 rounded-lg p-3 border-[2.5px] border-black flex justify-center">
+                <PokeEvolutionLine
+                  evolutionList={evolutionList}
+                  evolutionImgList={evolutionImgList}
+                />
+              </div>
+              <p className="text-gray-800 min-w-fit invisible">---</p>
             </div>
           </div>
         </div>

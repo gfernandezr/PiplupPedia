@@ -10,7 +10,9 @@ async function getEvolutionLineImg(url) {
     list.push([data.sprites.other["official-artwork"].front_default]);
 
     if (chain.evolves_to.length > 0) {
-      await Promise.all(chain.evolves_to.map(async (e) => await addPoke(e, list[list.length - 1])));
+      for (const e of chain.evolves_to) {
+        await addPoke(e, list[list.length - 1]);
+      }
     }
   }
 
@@ -19,4 +21,3 @@ async function getEvolutionLineImg(url) {
 }
 
 export default getEvolutionLineImg;
-
