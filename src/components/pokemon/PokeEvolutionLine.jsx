@@ -3,10 +3,11 @@ import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 import { capitalize } from "@mui/material";
-import arrow from "../../assets/arrow.svg";
-function PokeEvolutionLine({ evolutionList, evolutionImgList }) {
 
-  const { pokemon_name } = useParams();
+import arrow from "../../assets/arrow.svg";
+import loading from "../../assets/loading.svg";
+
+function PokeEvolutionLine({ evolutionList, evolutionImgList }) {
 
   function printName(list, imgList) {
     if (list && imgList) {
@@ -14,9 +15,7 @@ function PokeEvolutionLine({ evolutionList, evolutionImgList }) {
         return (
           <div className="flex w-fit">
             <div className="my-auto min-w-[100px] max-w-[150px] flex flex-col mx-auto">
-              <NavLink
-                to={`/pokemon/${list[0]}`}
-              >
+              <NavLink to={`/pokemon/${list[0]}`}>
                 <img
                   src={imgList[0]}
                   className=" mx-auto min-w-[80px] max-w-[80px] sm:max-w-[95px]
@@ -46,9 +45,7 @@ function PokeEvolutionLine({ evolutionList, evolutionImgList }) {
       } else {
         return (
           <div className="my-auto min-w-[100px] max-w-[150px] flex flex-col mx-auto">
-            <NavLink
-              to={`/pokemon/${list[0]}`}
-            >
+            <NavLink to={`/pokemon/${list[0]}`}>
               <img
                 src={imgList[0]}
                 className=" mx-auto min-w-[80px] max-w-[80px] sm:max-w-[95px]
@@ -65,7 +62,12 @@ function PokeEvolutionLine({ evolutionList, evolutionImgList }) {
         );
       }
     } else {
-      return <p> PokeLoading... </p>;
+      return (
+        <div className="flex flex-row mx-auto text-white">
+          <img className="w-6 animate-spin" src={loading} />
+          <p className="my-auto ml-3"> PokeLoading...</p>
+        </div>
+      );
     }
   }
   return <>{printName(evolutionList, evolutionImgList)}</>;

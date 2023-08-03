@@ -10,6 +10,8 @@ import PokeGrid from "./PokeGrid.jsx";
 import { chunkArray } from "../../functions/chunkArray.jsx";
 
 import who_pokemon from "../../assets/who_pokemon.png";
+import loading from "../../assets/loading.svg";
+
 
 function PokeSearch() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -18,7 +20,8 @@ function PokeSearch() {
   const { index } = useParams();
 
   useEffect(() => {
-    document.title = "Pagina " + index + " de " + pokemon_split.length + " - PiplupPedia"
+    document.title =
+      "Pagina " + index + " de " + pokemon_split.length + " - PiplupPedia";
   }, [query]);
 
   const filteredPokemon = pokemon.filter((poke) =>
@@ -28,14 +31,20 @@ function PokeSearch() {
   const pokemon_split = chunkArray(filteredPokemon, 12);
 
   if (!pokemon_split) {
-    return <h1 className="text-white"> Pokeloading...</h1>;
+    return (
+      <div className="flex flex-row mx-auto text-white">
+        <img className="w-6 animate-spin" src={loading} />
+        <p className="my-auto ml-3"> PokeLoading...</p>
+      </div>
+    );
   } else if (pokemon_split.length === 0)
     return (
       <div>
-        <b className="text-orange-500 text-3xl">
-        ¿Cuál es ese pokémon? 🤔
-        </b>
-        <img src={who_pokemon} className="my-5 rounded-md mx-auto w-[300px] sm:w-[400px]"/>
+        <b className="text-orange-500 text-3xl">¿Cuál es ese pokémon? 🤔</b>
+        <img
+          src={who_pokemon}
+          className="my-5 rounded-md mx-auto w-[300px] sm:w-[400px]"
+        />
         <h1 className="text-orange-500 text-xl md:text-3xl">
           {" "}
           No hay pokémon que coincidan con tu busqueda.{" "}

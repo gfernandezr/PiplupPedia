@@ -19,6 +19,9 @@ import PokedexDesc from "./PokedexDesc.jsx";
 import PokeDropDown from "../tools/PokeDropDown.jsx";
 import PokeStats from "./PokeStats.jsx";
 
+import loading from "../../assets/loading.svg";
+
+
 function PokePageRender() {
   const { pokemon } = useContext(PokeContext);
   const { pokemon_name } = useParams();
@@ -72,7 +75,12 @@ function PokePageRender() {
   }
 
   if (!poke || !pokespecies) {
-    return <div className="mx-auto text-white">PokeLoading...</div>;
+    return (
+      <div className="flex flex-row mx-auto text-white">
+        <img className="w-6 animate-spin" src={loading} />
+        <p className="my-auto ml-3"> PokeLoading...</p>
+      </div>
+    );
   }
 
   return (
@@ -171,7 +179,7 @@ function PokePageRender() {
 function PokePage() {
   const { pokemon } = useContext(PokeContext);
   const { pokemon_name } = useParams();
-  
+
   const pokemon_array = pokemon.filter((poke) =>
     poke.name.includes(pokemon_name.toLocaleLowerCase())
   );

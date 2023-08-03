@@ -6,6 +6,8 @@ import PokeType from "../pokemon/utils/PokeType.jsx";
 import PokeGen from "../pokemon/utils/PokeGen.jsx";
 import PokeGif from "./PokeGif.jsx";
 
+import loading from "../../assets/loading.svg";
+
 function PokeCard({ pokemon_url }) {
   const [poke, setPoke] = useState(null);
   const [pokespecies, setSpecies] = useState(null);
@@ -31,7 +33,12 @@ function PokeCard({ pokemon_url }) {
   }, [pokemon_url]);
 
   if (!poke || !pokespecies) {
-    return <div className="mx-auto text-white">PokeLoading...</div>;
+    return (
+      <div className="flex flex-row mx-auto text-white">
+        <img className="w-6 animate-spin" src={loading} />
+        <p className="my-auto ml-3"> PokeLoading...</p>
+      </div>
+    );
   }
 
   return (
