@@ -21,21 +21,11 @@ function PokeEvolutionLine({ evolutionList, evolutionImgList }) {
                   src={imgList[0]}
                   className=" mx-auto min-w-[80px] max-w-[80px] sm:max-w-[95px]
                   md:max-w-[120px]"
-                  style={
-                    capitalize(list[0]) === pokemon_name
-                      ? { pointerEvents: "none", color: "#c2410c" }
-                      : {}
-                  }
                 />{" "}
               </NavLink>
               <NavLink
                 to={`/pokemon/${list[0]}`}
                 className="text-orange-600 text-center hover:underline"
-                style={
-                  capitalize(list[0]) === pokemon_name
-                  ? { pointerEvents: "none", color: "#c2410c" }
-                    : {}
-                }
               >
                 {capitalize(list[0])}
               </NavLink>
@@ -63,21 +53,11 @@ function PokeEvolutionLine({ evolutionList, evolutionImgList }) {
                 src={imgList[0]}
                 className=" mx-auto min-w-[80px] max-w-[80px] sm:max-w-[95px]
                   md:max-w-[120px]"
-                style={
-                  capitalize(list[0]) === pokemon_name
-                  ? { pointerEvents: "none", color: "#c2410c" }
-                    : {}
-                }
               />{" "}
             </NavLink>
             <NavLink
               to={`/pokemon/${list[0]}`}
               className="text-orange-600 text-center hover:underline"
-              style={
-                capitalize(list[0]) === pokemon_name
-                ? { pointerEvents: "none", color: "#c2410c" }
-                  : {}
-              }
             >
               {capitalize(list[0])}
             </NavLink>
