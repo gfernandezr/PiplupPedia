@@ -17,6 +17,7 @@ import PokeEvolutionDesc from "./PokeEvolutionDesc.jsx";
 import PokeGameData from "./PokeGameData.jsx";
 import PokedexDesc from "./PokedexDesc.jsx";
 import PokeDropDown from "../tools/PokeDropDown.jsx";
+import PokeStats from "./PokeStats.jsx";
 
 function PokePage() {
   const { pokemon } = useContext(PokeContext);
@@ -74,7 +75,7 @@ function PokePage() {
   }
 
   return (
-    <div className="">
+    <div>
       <div className="md:flex md:flex-row-reverse md:gap-10">
         <PokePageCard poke={poke} pokespecies={pokespecies} />
 
@@ -131,20 +132,34 @@ function PokePage() {
       <div>
         <div className="flex flex-row gap-3 align-middle">
           <p className="text-left md:flex text-orange-500 text-3xl md:text-4xl font-black capitalize my-2 ">
-            Descripción Pokédex
+            Características de combate
           </p>
-          <PokeDropDown
-            default_lan={pokedexLanguage}
-            setValue={setPokedexLanguage}
-          />
         </div>
         <hr className="h-[1px] bg-orange-500 border-0" />
 
-        <div className="bg-gray-800 text-gray-400 rounded-lg p-2 pb-3 border-[2px] border-orange-500 text-justify mt-3 w-full">
-          <PokedexDesc
-            entries={pokespecies.flavor_text_entries}
-            language={pokedexLanguage}
-          />
+        <div className="bg-gray-800 text-gray-400 rounded-lg p-3 pb-3 border-[2px] border-orange-500 text-justify mt-3 w-full overflow-x-auto">
+          <PokeStats stats={poke.stats} />
+        </div>
+      </div>
+      <div>
+        <div>
+          <div className="flex flex-row gap-3 align-middle">
+            <p className="text-left md:flex text-orange-500 text-3xl md:text-4xl font-black capitalize my-2 ">
+              Descripción Pokédex
+            </p>
+            <PokeDropDown
+              default_lan={pokedexLanguage}
+              setValue={setPokedexLanguage}
+            />
+          </div>
+          <hr className="h-[1px] bg-orange-500 border-0" />
+
+          <div className="bg-gray-800 text-gray-400 rounded-lg p-2 pb-3 border-[2px] border-orange-500 text-justify mt-3 w-full">
+            <PokedexDesc
+              entries={pokespecies.flavor_text_entries}
+              language={pokedexLanguage}
+            />
+          </div>
         </div>
       </div>
     </div>

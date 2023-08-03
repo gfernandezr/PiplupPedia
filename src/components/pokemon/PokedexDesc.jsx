@@ -1,4 +1,4 @@
-import { versions } from "./utils/PokedexGameIcons";
+import { versions } from "./utils/versions";
 
 function PokedexDesc({ entries, language }) {
   const es_entries = entries.filter(
