@@ -75,7 +75,7 @@ function PokePageCard({ poke, pokespecies }) {
   return (
     <>
       <div
-        className="bg-gray-800 text-white rounded-lg p-3 border-[2px] border-orange-500 min-w-fit max-w-[400px] h-full mx-auto my-auto
+        className="bg-gray-800 text-white rounded-lg p-3 border-[2px] border-orange-500 min-w-fit max-w-[400px] h-full mx-auto
       md:min-w-[270px] md:max-w-[270px] md:mr-0"
       >
         <h1 className="font-bold capitalize text-center text-xl mb-2">

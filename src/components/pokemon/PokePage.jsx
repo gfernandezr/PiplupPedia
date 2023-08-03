@@ -19,7 +19,7 @@ import PokedexDesc from "./PokedexDesc.jsx";
 import PokeDropDown from "../tools/PokeDropDown.jsx";
 import PokeStats from "./PokeStats.jsx";
 
-function PokePage() {
+function PokePageRender() {
   const { pokemon } = useContext(PokeContext);
   const { pokemon_name } = useParams();
 
@@ -70,6 +70,7 @@ function PokePage() {
   if (pokemon_array.length === 0) {
     return <PokeNotFound />;
   }
+
   if (!poke || !pokespecies) {
     return <div className="mx-auto text-white">PokeLoading...</div>;
   }
@@ -165,6 +166,21 @@ function PokePage() {
       </div>
     </div>
   );
+}
+
+function PokePage() {
+  const { pokemon } = useContext(PokeContext);
+  const { pokemon_name } = useParams();
+  
+  const pokemon_array = pokemon.filter((poke) =>
+    poke.name.includes(pokemon_name.toLocaleLowerCase())
+  );
+
+  if (!pokemon_array[0]) {
+    return <PokeNotFound />;
+  }
+
+  return <PokePageRender />;
 }
 
 export default PokePage;
