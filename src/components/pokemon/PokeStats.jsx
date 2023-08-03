@@ -19,7 +19,7 @@ function PokeStats({ stats }) {
 
   function td_className(index) {
     let td_class =
-      "text-gray-800 text-center border-r-[1px] border-gray-400 sm:px-3";
+      "text-gray-800 text-center border-r-[1px] border-gray-400 sm:px-3 sm:min-w-[53px]";
     if (index % 2 === 0) {
       return td_class + " bg-gray-200";
     } else {
@@ -100,7 +100,7 @@ function PokeStats({ stats }) {
             Características base
           </th>
           <th
-            className="border-2 border-black text-center text-gray-200 bg-gr font-normal"
+            className="border-2 border-black text-center text-gray-200 font-normal"
             colSpan={2}
           >
             Nivel
@@ -114,12 +114,12 @@ function PokeStats({ stats }) {
             />
           </th>
           <th
-            className="border-2 border-black text-center text-gray-200 bg-gr font-normal"
+            className="border-2 border-black text-center text-gray-200 font-normal"
             colSpan={2}
           >
             Nivel 100
           </th>
-          <th className="border-2 border-black text-center text-gray-200 bg-gr font-normal">
+          <th className="border-2 border-black text-center text-gray-200 font-normal">
             PE
           </th>
         </tr>
