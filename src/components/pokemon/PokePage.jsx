@@ -31,7 +31,7 @@ function PokePage() {
         `/PiplupPedia/pokemon/${capitalize(pokemon_name)}`
       );
     }
-  }, []);
+  }, [pokemon_name]);
 
   const pokemon_array = pokemon.filter((poke) =>
     poke.name.includes(pokemon_name.toLocaleLowerCase())
