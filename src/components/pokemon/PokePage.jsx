@@ -138,6 +138,7 @@ function PokePage() {
         <hr className="h-[1px] bg-orange-500 border-0" />
 
         <div className="bg-gray-800 text-gray-400 rounded-lg p-3 pb-3 border-[2px] border-orange-500 text-justify mt-3 w-full overflow-x-auto">
+          <p>Las características de {capitalize(poke.name)} son:</p>
           <PokeStats stats={poke.stats} />
         </div>
       </div>

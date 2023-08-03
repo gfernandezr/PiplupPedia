@@ -89,7 +89,7 @@ function PokeStats({ stats }) {
   };
 
   return (
-    <table className="bg-black bg-opacity-70 w-full border-2 border-black text-[11px] sm:text-base md:text-lg max-w-[800px] mx-auto">
+    <table className="bg-black bg-opacity-70 w-full border-2 border-black text-[11px] sm:text-base md:text-lg max-w-[800px] mx-auto my-2">
       <tr>
         <th className="border-2 border-black"></th>
         <th
