@@ -31,7 +31,7 @@ function PokeEvolutionLine({ evolutionList, evolutionImgList }) {
             </div>
 
             <div className="w-[20px] md:w-[40px] my-auto">
-              <img src={arrow} />
+              <img src={arrow} className="rotate-180" />
             </div>
             <div className="flex flex-col pl-4">
               {list.slice(1).map((e, i) => (
