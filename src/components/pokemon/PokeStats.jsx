@@ -90,115 +90,129 @@ function PokeStats({ stats }) {
 
   return (
     <table className="bg-black bg-opacity-70 w-full border-2 border-black text-[11px] sm:text-base md:text-lg max-w-[800px] mx-auto my-2">
-      <tr>
-        <th className="border-2 border-black"></th>
-        <th
-          className="border-2 border-black text-center text-gray-200 bg-gr font-normal"
-          colSpan={2}
-        >
-          Características base
-        </th>
-        <th
-          className="border-2 border-black text-center text-gray-200 bg-gr font-normal"
-          colSpan={2}
-        >
-          Nivel{" "}
-          <input
-            className="w-10 h-fit bg-gray-400 text-gray-800 rounded-xl text-center mx-1 border-[1.5px] border-black outline-none font-bold"
-            type="number"
-            inputMode="numeric"
-            value={level}
-            onChange={handleLevelChange}
-            onBlur={handleLevelBLur}
-          />
-        </th>
-        <th
-          className="border-2 border-black text-center text-gray-200 bg-gr font-normal"
-          colSpan={2}
-        >
-          Nivel 100
-        </th>
-        <th className="border-2 border-black text-center text-gray-200 bg-gr font-normal">
-          PE
-        </th>
-      </tr>
-      {stats.map((stat, index) => (
-        <tr key={index}>
-          <th className="border-2 border-black text-center text-gray-200 font-normal">
-            {stat_es(stat.stat.name)}
+      <tbody>
+        <tr>
+          <th className="border-2 border-black"></th>
+          <th
+            className="border-2 border-black text-center text-gray-200 bg-gr font-normal"
+            colSpan={2}
+          >
+            Características base
           </th>
+          <th
+            className="border-2 border-black text-center text-gray-200 bg-gr font-normal"
+            colSpan={2}
+          >
+            Nivel
+            <input
+              className="w-10 h-fit bg-gray-400 text-gray-800 rounded-xl text-center mx-1 border-[1.5px] border-black outline-none font-bold"
+              type="number"
+              inputMode="numeric"
+              value={level}
+              onChange={handleLevelChange}
+              onBlur={handleLevelBLur}
+            />
+          </th>
+          <th
+            className="border-2 border-black text-center text-gray-200 bg-gr font-normal"
+            colSpan={2}
+          >
+            Nivel 100
+          </th>
+          <th className="border-2 border-black text-center text-gray-200 bg-gr font-normal">
+            PE
+          </th>
+        </tr>
+        {stats.map((stat, index) => (
+          <tr key={index}>
+            <th className="border-2 border-black text-center text-gray-200 font-normal">
+              {stat_es(stat.stat.name)}
+            </th>
 
-          <td className={td_className(index)}>{stat.base_stat}</td>
+            <td className={td_className(index)}>{stat.base_stat}</td>
 
-          <td className={td_bar_className(index)}>
-            <div
-              style={statBar(stat.base_stat)}
-              className="h-3 rounded-lg border-[1px] border-gray-800"
-            ></div>
-          </td>
+            <td className={td_bar_className(index)}>
+              <div
+                style={statBar(stat.base_stat)}
+                className="h-3 rounded-lg border-[1px] border-gray-800"
+              ></div>
+            </td>
 
-          <td className={td_className(index)}>
-            {StatCalculator(stat.stat.name, stat.base_stat, 0, 0, level, 0.9)}
-          </td>
-          <td className={td_className(index)}>
-            {StatCalculator(
-              stat.stat.name,
-              stat.base_stat,
-              31,
-              252,
-              level,
-              1.1
+            <td className={td_className(index)}>
+              {StatCalculator(stat.stat.name, stat.base_stat, 0, 0, level, 0.9)}
+            </td>
+            <td className={td_className(index)}>
+              {StatCalculator(
+                stat.stat.name,
+                stat.base_stat,
+                31,
+                252,
+                level,
+                1.1
+              )}
+            </td>
+
+            <td className={td_className(index)}>
+              {StatCalculator(stat.stat.name, stat.base_stat, 0, 0, 100, 0.9)}
+            </td>
+            <td className={td_className(index)}>
+              {StatCalculator(
+                stat.stat.name,
+                stat.base_stat,
+                31,
+                252,
+                100,
+                1.1
+              )}
+            </td>
+
+            <td className={td_className(index)}>{stat.effort}</td>
+          </tr>
+        ))}
+        <tr>
+          <th className="border-2 border-black text-center text-gray-200 font-normal">
+            Total
+          </th>
+          <td className="border-2 border-black text-center text-gray-200 font-normal">
+            {Object.values(stats).reduce(
+              (total, obj) => total + obj.base_stat,
+              0
             )}
           </td>
-
-          <td className={td_className(index)}>
-            {StatCalculator(stat.stat.name, stat.base_stat, 0, 0, 100, 0.9)}
-          </td>
-          <td className={td_className(index)}>
-            {StatCalculator(stat.stat.name, stat.base_stat, 31, 252, 100, 1.1)}
-          </td>
-
-          <td className={td_className(index)}>{stat.effort}</td>
+          <td className="border-2 border-black"></td>
+          <th className="border-2 border-black text-center text-gray-200 font-normal">
+            Mín
+          </th>
+          <th className="border-2 border-black text-center text-gray-200 font-normal">
+            Máx
+          </th>
+          <th className="border-2 border-black text-center text-gray-200 font-normal">
+            Mín
+          </th>
+          <th className="border-2 border-black text-center text-gray-200 font-normal">
+            Máx
+          </th>
+          <td className="border-2 border-black"></td>
         </tr>
-      ))}
-      <tr>
-        <th className="border-2 border-black text-center text-gray-200 font-normal">
-          Total
-        </th>
-        <td className="border-2 border-black text-center text-gray-200 font-normal">
-          {Object.values(stats).reduce(
-            (total, obj) => total + obj.base_stat,
-            0
-          )}
-        </td>
-        <td className="border-2 border-black"></td>
-        <th className="border-2 border-black text-center text-gray-200 font-normal">
-          Mín
-        </th>
-        <th className="border-2 border-black text-center text-gray-200 font-normal">
-          Máx
-        </th>
-        <th className="border-2 border-black text-center text-gray-200 font-normal">
-          Mín
-        </th>
-        <th className="border-2 border-black text-center text-gray-200 font-normal">
-          Máx
-        </th>
-        <td className="border-2 border-black"></td>
-      </tr>
-      <tr>
-        {" "}
-        <td className="text-center italic bg-gray-300 text-gray-800 px-2" colSpan={8}>
-          Valores mínimos (Mín) calculados asumiendo naturaleza desfavorable, 0
-          EVs y 0 IVs.
-        </td>
-      </tr>
-      <tr>
-        <td className="text-center italic bg-gray-300 text-gray-800 px-2" colSpan={8}>
-          Valores máximos (Máx) calculados asumiendo naturaleza favorable, 252
-          EVs y 31 IVs.
-        </td>
-      </tr>
+        <tr>
+          <td
+            className="text-center italic bg-gray-300 text-gray-800 px-2"
+            colSpan={8}
+          >
+            Valores mínimos (Mín) calculados asumiendo naturaleza desfavorable,
+            0 EVs y 0 IVs.
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="text-center italic bg-gray-300 text-gray-800 px-2"
+            colSpan={8}
+          >
+            Valores máximos (Máx) calculados asumiendo naturaleza favorable, 252
+            EVs y 31 IVs.
+          </td>
+        </tr>
+      </tbody>
     </table>
   );
 }
